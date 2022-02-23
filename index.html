@@ -20,9 +20,6 @@ Was machst du so grade?&quot;
 &quot;Ähh, ich studiere (input-box: bind $Studiengang,&quot;=XX=&quot;,1,&quot;Studiengang&quot;)&quot;
 (link:&quot;weiter&quot;)[=
 &quot;Cool, $Studiengang, darüber hab ich auch mal nachgedacht.&quot;
-&quot;Wo bist du denn dann jetzt?&quot;
-(input-box: bind $Studienort,&quot;=XX=&quot;,1,&quot;Studienort&quot;)
-(link:&quot;weiter&quot;)[=
 &quot;Cool, hier müssen wir glaub rein!&quot;
 [[Wohnung betreten-&gt;Endframe]]</tw-passagedata><tw-passagedata pid="3" name="Wecker" tags="" position="375,99" size="100,100">&lt;img src = &quot;Screenshot_20220221_151507_com.android.deskclock.jpg&quot; /&gt;
 Es ist Freitag Nachmittag du hast dir extra den Abend frei geschaufelt um deine alte Klassenstufe wieder zu treffen
@@ -48,7 +45,7 @@ Die letzte Option wäre noch der (link: &quot;Anzug&quot;)[Anzug (set: $Klamotte
 (hide: ?weiter)</tw-passagedata><tw-passagedata pid="8" name="Bad" tags="" position="449,599" size="100,100">Die Zeit reicht, du könntest nochmal (link: &quot;duschen&quot;)[duschen (set: $duschen to true)], obwohl du das heute morgen schon hast.
 Du musst auf jeden Fall deine (link: &quot;Zähne putzen!&quot;)[Zähne putzen (set: $Hygiene to true)(show: ?weiter)]
 |weiter&gt;[(if: $angezogen is false)[(set: $erst to &quot;im Bad&quot;)[[Anziehen-&gt;Zimmer]]] (if: $angezogen is true)[[Zur Haustüre gehen -&gt;Hauseingang]]]
-(hide: ?weiter)</tw-passagedata><tw-passagedata pid="9" name="Initial" tags="" position="201,98" size="100,100">&lt;img src= &quot;student-g3275fc50c_640.jpg&quot;\&gt;
+(hide: ?weiter)</tw-passagedata><tw-passagedata pid="9" name="Initial" tags="" position="201,97" size="100,100">&lt;img src= &quot;student-g3275fc50c_640.jpg&quot;\&gt;
 [[Wecker]]
 
 (set: $speichern to &quot;NULL&quot;)
@@ -64,29 +61,27 @@ Du musst auf jeden Fall deine (link: &quot;Zähne putzen!&quot;)[Zähne putzen (
 (set: $Transport to &quot;NULL&quot;)
 
 (set: $playerName to &quot;NULL&quot;)
-(set: $Studiengang to &quot;NULL&quot;)
-(set: $Studienort to &quot;NULL&quot;)</tw-passagedata><tw-passagedata pid="10" name="Hauseingang" tags="" position="373,750" size="100,100">Du überlegst ob du Fahrrad, Bahn, Auto fahren willst.
+(set: $Studiengang to &quot;NULL&quot;)</tw-passagedata><tw-passagedata pid="10" name="Hauseingang" tags="" position="373,750" size="100,100">Du überlegst ob du Fahrrad, Bahn, Auto fahren willst.
 (if: $duschen is true)[Du bist spät dran, mit dem Fahrrad müsstest du dich sehr beeilen, es wäre aber die schönere Strecke. Das Auto wäre das schnellste, aber dann darfst du nicht viel trinken. Die Öffentlichen sind am Anstrengendsten, aber dafür unabhängig von möglichen Alkoholpegeln] (if: $duschen is false)[Das Fahrrad bedeutet die schönste Strecke, am See entlang, das Auto ist am schnellsten, und die Bahn ist unabhängig vom Alkoholpegel]
 [[Autoschlüssel-&gt;Auto]]
 [[Abo-&gt;Bahn]]
 [[Fahrradschlüssel-&gt;Fahrrad]]</tw-passagedata><tw-passagedata pid="11" name="Auto" tags="" position="223,902" size="100,100">Du steigst in dein Auto und fährst los.
 (if: $duschen is true)[Der Verkehr ist ruhig, du schaffst es noch pünktlich. Langsam nimmt die Anspannung ab. Du kannst dich richtig auf den Abend freuen.](else: )[Du hast Zeit du entscheidest dich einen kleinen Umweg zu fahren um wenigstens ein bisschen Landschaft auf dem Weg mit zu nehmen. Der Alltagsstress der letzten Woche nimmt ab. Du kannst dich richtig auf den Abend freuen.]
 [[Weiter-&gt;Auto Pt.2]]</tw-passagedata><tw-passagedata pid="12" name="Bahn" tags="" position="376,900" size="100,100">Du läufst zur Bahn, setzt deine Kopfhörer auf und lässt die Welt um dich herum einfach vorbei ziehen.
-[[weiter-&gt;Bahn Pt.2]]</tw-passagedata><tw-passagedata pid="13" name="Fahrrad" tags="" position="531,898" size="100,100">(if: $duschen is true)[Du schließt dein Fahrrad auf fährst los und beeilst dich das du noch rechtzeitig ankommst).
+[[weiter-&gt;Bahn Pt.2]]</tw-passagedata><tw-passagedata pid="13" name="Fahrrad" tags="" position="533,897" size="100,100">(if: $duschen is true)[Du schließt dein Fahrrad auf fährst los und beeilst dich das du noch rechtzeitig ankommst).
 
 
-Schon von der Straßenecke siehst du Leute vor der Hautüre stehen.
+Schon von der Straßenecke siehst du Leute vor der Haustüre stehen.
 [[weiter-&gt;Vor dem Haus]]](if: $duschen is false)[Du schließt dein Fahrrad auf, setzt deine Kopfhörer auf und während du am See entlang zur Party fährst merkst du langsam wie sich der Alltagsstress von dir ablöst und du dich freust deine Freunde wieder zu treffen.
 
 [[weiter-&gt;Fahrrad Pt.2]]]
 (set: $Transport to &quot;dem Fahrrad&quot;)</tw-passagedata><tw-passagedata pid="14" name="Auto Pt.2" tags="" position="223,1053" size="100,100">(t8n: &quot;fade&quot;)[&lt;img src=&quot;car-g6d4f60614_640.jpg&quot;&gt;
 [[Ankommen-&gt;Vor dem Haus]]]
 
-(set: $Transport to &quot;dem Auto&quot;)</tw-passagedata><tw-passagedata pid="15" name="Bahn Pt.2" tags="" position="377,1049" size="100,100">(t8n: &quot;fade&quot;)[&lt;img src=&quot;car-g6d4f60614_640.jpg&quot;&gt;
+(set: $Transport to &quot;dem Auto&quot;)</tw-passagedata><tw-passagedata pid="15" name="Bahn Pt.2" tags="" position="377,1049" size="100,100">(t8n: &quot;fade&quot;)[&lt;img src=&quot;rail-g8c17d5367_640.jpg&quot;&gt;
 [[Aussteigen-&gt;Vor dem Haus]]]
 
-(set: $Transport to &quot;der Bahn&quot;)</tw-passagedata><tw-passagedata pid="16" name="Beenden" tags="" position="382,1553" size="100,100">(set: $speichern to &quot;speichern&quot;)
-&lt;h2&gt; Vielen Dank, $playerName, fürs Spielen! &lt;/h2&gt;
+(set: $Transport to &quot;der Bahn&quot;)</tw-passagedata><tw-passagedata pid="16" name="Beenden" tags="" position="382,1553" size="100,100">&lt;h2&gt; Vielen Dank, $playerName, fürs Spielen! &lt;/h2&gt;
 
 (if: $speichern is &quot;speichern&quot;)[=
 Entscheidungen:
